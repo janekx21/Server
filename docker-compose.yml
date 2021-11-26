@@ -1,7 +1,6 @@
 version: "3.9"
 services:
   whoami:
-    # A container that exposes an API to show its IP address
     image: traefik/whoami
     labels:
       - "traefik.http.routers.whoami.rule=PathPrefix(`/`)"
