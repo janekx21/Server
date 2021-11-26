@@ -2,5 +2,7 @@ version: "3.9"
 services:
   whoami:
     image: traefik/whoami
+    ports: "8003:80"
     labels:
       - "traefik.http.routers.whoami.rule=PathPrefix(`/`)"
+    restart: alwayes
