@@ -18,6 +18,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - $PWD/traefik.yml:/etc/traefik/traefik.yml
     restart: always
+    network_mode: "host"
 
 
 volumes:
