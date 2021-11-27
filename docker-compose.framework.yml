@@ -10,6 +10,21 @@ services:
       - portainer_data:/data
     restart: always
 
+  traefik:
+    image: traefik:v2.5
+    ports:
+      - "8080:8080"
+      - "80:80"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - $PWD/traefik.yml:/etc/traefik/traefik.yml
+    restart: always
+    networks:
+      - online_default
 
 volumes:
   portainer_data:
+
+networks:
+  online_default:
+    - external: true
